@@ -1,0 +1,4 @@
+build/
+dist/
+*.bat
+JSFetch.egg-info/
