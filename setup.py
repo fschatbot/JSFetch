@@ -3,9 +3,13 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
+requires = [
+	"aiohttp==3.8.1",
+]
+
 setuptools.setup(
     name="JSFetch",
-    version="0.0.1",
+    version="0.0.2",
     author="FSChatBot",
     description="Lets you make fetch requests in python as you would in JavaScript",
     long_description=long_description,
@@ -21,5 +25,6 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
+	install_requires=requires,
     python_requires=">=3.10",
 )
