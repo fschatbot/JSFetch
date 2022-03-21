@@ -6,13 +6,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name="JSFetch",
     version="0.0.1",
-    author="FsChatBot",
-    description="A small example package",
+    author="FSChatBot",
+    description="Lets you make fetch requests in python as you would in JavaScript",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/fschatbot/jsFetch",
+    url="https://github.com/fschatbot/JSFetch",
     project_urls={
-        "Bug Tracker": "https://github.com/fschatbot/jsFetch/issues",
+        "Bug Tracker": "https://github.com/fschatbot/JSFetch/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
