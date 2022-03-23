@@ -19,10 +19,13 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/fschatbot/JSFetch/issues",
     },
     classifiers=[
+		"Development Status :: 3 - Alpha",
+		"Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+	keywords = "Networking, Javascript, JS, Fetch, Async, AsyncIO, AsyncHTTPClient, AsyncHTTP",
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
 	install_requires=requires,
