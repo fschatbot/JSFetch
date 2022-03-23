@@ -1,11 +1,12 @@
 from .errors import NoCallBack
 import aiohttp
+import json
 
 class Promise:
 	def __init__(self, prev_promise, then_callable=None, catch_callable=None, finally_callable=None):
 		self.prev_promise = prev_promise
 		# Basic Variables
-		self._data = None
+		self.data = None
 		self.resolved = False
 		self.next_promise = None
 
@@ -16,7 +17,7 @@ class Promise:
 		self.catch_callable = catch_callable
 		self.finally_callable = finally_callable
 		
-	# Methods for user
+	# Basic Methods for user
 	def then(self, callable):
 		self.next_promise = Promise(self, then_callable=callable)
 		return self.next_promise
@@ -27,10 +28,15 @@ class Promise:
 	def finally_(self, callable):
 		return Promise(self, finally_callable=callable)
 	
+	# Util methods for user
+	def toJSON(self):
+		return self.then(lambda data: json.loads(data))
+	
 	# Methods not for user
 	def resolve(self, value):
 		self.resolved = True
 		try:
+			# Give More Data to the callable
 			self.data = self.then_callable(value)
 			self.next_promise.resolve(self.data)
 		except Exception as err:
@@ -57,12 +63,11 @@ class Promise:
 	
 	def __getitem__(self, key):
 		return self.data[key]
-	
-	@staticmethod
-	def data(self):
-		return self._data
+
 
 async def fetch(url):
+	empt_promise = Promise(None)
+	yield empt_promise
 	async with aiohttp.ClientSession() as session:
 		async with session.get(url) as response:
-			return await response.text()
+			empt_promise.resolve(await response)
