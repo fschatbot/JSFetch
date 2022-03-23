@@ -28,8 +28,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
 	keywords = "Networking, Javascript, JS, Fetch, Async, AsyncIO, AsyncHTTPClient, AsyncHTTP",
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    package_dir={"JSFetch": "src"},
+	packages=["JSFetch"],
 	install_requires=requires,
     python_requires=">=3.10",
 )
