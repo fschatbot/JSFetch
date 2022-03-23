@@ -11,7 +11,7 @@ requires = [
 
 setuptools.setup(
     name="JSFetch",
-    version="0.0.5",
+    version="0.0.6",
     author="FSChatBot",
     description="Lets you make fetch requests in python as you would in JavaScript",
     long_description=long_description,
