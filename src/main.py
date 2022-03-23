@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 from .errors import NoCallBack
 import aiohttp
 import json
