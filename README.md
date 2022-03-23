@@ -30,3 +30,5 @@ JSFetch is currently only tested on Python 3.10 and above.
 - Make the fetch function return a proper promise
 - Callbacks to be given more data than just the mapped data
 - A fetch class for making requests and returning a promises
+- Fetch should be able to be called in top level without async and can be blocking in that use
+- Fetch can be awaitable when called in an async function and also not be blocking
