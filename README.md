@@ -23,3 +23,10 @@ $ pip install JSFetch --upgrade
 ```
 
 JSFetch is currently only tested on Python 3.10 and above.
+
+## Todo
+
+- Static Type the language
+- Make the fetch function return a proper promise
+- Callbacks to be given more data than just the mapped data
+- 
