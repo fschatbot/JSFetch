@@ -23,10 +23,12 @@ class Promise:
 		return self.next_promise
 	
 	def catch(self, callable):
-		return Promise(self, catch_callable=callable)
+		self.next_promise = Promise(self, catch_callable=callable)
+		return self.next_promise
 	
 	def finally_(self, callable):
-		return Promise(self, finally_callable=callable)
+		self.next_promise = Promise(self, finally_callable=callable)
+		return self.next_promise
 	
 	# Util methods for user
 	def toJSON(self):
@@ -46,6 +48,9 @@ class Promise:
 				self.next_promise.rejected(value)
 			else:
 				raise err
+		finally:
+			if self.finally_callable:
+				self.finally_callable()
 	
 	# Methods for working with the class
 	def __str__(self):
