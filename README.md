@@ -1,6 +1,6 @@
 # JSFetch
 
-**JSFetch** is a simple python library that allows you to make HTTP requests in python extaclty the way you would in JavaScript. This allows for sending in requests faster and easier than it's competitors. You also get access to a lot of inbuilt functions to lower the amount of code you need to write.
+**JSFetch** is a simple python library that allows you to make HTTP requests in python exactly the way you would in JavaScript. This allows for sending in requests faster and easier than it's competitors. You also get access to a lot of inbuilt functions to lower the amount of code you need to write.
 
 ```python
 >>> from jsfetch import fetch
